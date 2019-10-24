@@ -3,8 +3,7 @@ from django.db import models
 
 
 class CustomUser(AbstractUser):
-    name = models.CharField(max_length=64)
-
+    name = models.CharField(max_length=64, blank=True)
 
     def __str__(self):
         return self.username
