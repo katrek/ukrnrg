@@ -6,8 +6,6 @@
 {% if user.is_authenticated %}
   <div class="monitoring-list">
       <h3><b>URL monitoring list</b></h3>
-      {{ status_code }}
-      {{ urls }}
         <a href="{% url 'add_url' %}">Add url</a>
         <table class="table table-bordered">
             <thead>
@@ -19,14 +17,10 @@
                 </tr>
             </thead>
             <tbody>
-                {% for url, status in info.items %}
                 <tr>
-                    {% if 'requests.exceptions' in status %}
-                        <td style="color: red"><b>{{ status }}</b></td>
-                    {% else %}
-                    <td>{{ status }}</td>
-                    {% endif %}
-                    <td>{{ url }}</td>
+                {% for url in urls %}
+                    <td>{{ url.status_code }}</td>
+                    <td>{{ url.url }}</td>
                     <td>{{ url.last_checked }}</td>
                     <td><a href="{% url 'delete_url' url.pk %}">Delete</a></td>
                 </tr>
