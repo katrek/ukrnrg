@@ -12,7 +12,8 @@ class URLMonitor(models.Model):
     url = models.TextField(unique=True, verbose_name='URL')
     interval = models.IntegerField(choices=INTERVAL_CHOICES, null=True, verbose_name='Refresh interval in seconds')
     last_checked = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    status_code = models.CharField(max_length=256, null=True, blank=True)
+    status_code = models.CharField(max_length=512, null=True, blank=True)
+
     objects = models.Manager()
 
     def __str__(self):

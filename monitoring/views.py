@@ -1,8 +1,13 @@
+import requests
+
 from django.views.generic import CreateView, ListView, DeleteView, UpdateView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 from .models import URLMonitor
-import requests
 from .tasks import change_status_code
+
+from modules.get_full_class_name import get_full_class_name
 
 
 class IndexView(ListView):
@@ -12,31 +17,25 @@ class IndexView(ListView):
     change_status_code.delay()
 
 
-class CreateURL(CreateView):
+class CreateURL(LoginRequiredMixin, CreateView):
     template_name = 'create_url.html'
     model = URLMonitor
     fields = ('url', 'interval')
-
+    login_url = 'login'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         try:
             self.object.status_code = requests.get(self.object.url)
         except requests.exceptions.RequestException as e:
-            self.object.status_code = e
+            self.object.status_code = get_full_class_name(e)
         return super().form_valid(form)
 
 
-class DeleteURL(DeleteView):
+class DeleteURL(LoginRequiredMixin, DeleteView):
     template_name = 'delete_url.html'
     model = URLMonitor
     context_object_name = 'url'
     success_url = reverse_lazy('index')
+    login_url = 'login'
 
-class UpdateURL(UpdateView):
-    model = URLMonitor
-
-    def form_valid(self, form):
-        self.object = form.save(commit=False)
-
-        change_status_code()

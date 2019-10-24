@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{% load humanize %}
 
 {% block content %}
 
 <main role="main" class="container">
 {% if user.is_authenticated %}
   <div class="monitoring-list">
+      <h5>Hello, <strong>{{ user.username }}!</strong></h5>
       <h3><b>URL monitoring list</b></h3>
         <a href="{% url 'add_url' %}">Add url</a>
         <table class="table table-bordered">
@@ -19,9 +21,13 @@
             <tbody>
                 <tr>
                 {% for url in urls %}
+                    {% if 'requests.exceptions' in url.status_code %}
+                    <td style="color: red;">{{ url.status_code }}</td>
+                    {% else %}
                     <td>{{ url.status_code }}</td>
+                    {% endif %}
                     <td>{{ url.url }}</td>
-                    <td>{{ url.last_checked }}</td>
+                    <td>{{ url.last_checked|naturaltime }}</td>
                     <td><a href="{% url 'delete_url' url.pk %}">Delete</a></td>
                 </tr>
                 {% endfor %}
