@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="{% url 'index' %}">WebMonitor</a>
+      <ul class="navbar-nav">
+          <li class="nav-item active">
+              {% if user.is_authenticated %}
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              {% endif %}
+          </li>
+      </ul>
+</nav>

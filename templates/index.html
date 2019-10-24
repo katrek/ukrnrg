@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main role="main" class="container">
+{% if user.is_authenticated %}
+  <div class="monitoring-list">
+      <h3><b>URL monitoring list</b></h3>
+      {{ status_code }}
+      {{ urls }}
+        <a href="{% url 'add_url' %}">Add url</a>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Status</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Last checked</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for url, status in info.items %}
+                <tr>
+                    {% if 'requests.exceptions' in status %}
+                        <td style="color: red"><b>{{ status }}</b></td>
+                    {% else %}
+                    <td>{{ status }}</td>
+                    {% endif %}
+                    <td>{{ url }}</td>
+                    <td>{{ url.last_checked }}</td>
+                    <td><a href="{% url 'delete_url' url.pk %}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+  </div>
+</main>
+{% else %}
+  <div class="greeting-class">
+      <h3><b>WebMonitor</b> - your way to monitor websites!</h3>
+    <p class="lead">To use our service, you have to <a href="{% url 'login' %}">Login</a></p>
+  </div>
+{% endif %}
+
+{% endblock content %}
