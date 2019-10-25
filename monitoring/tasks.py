@@ -19,7 +19,6 @@ else:
 @periodic_task(name='UPDATE_STATUS_CODE',
                run_every=datetime.timedelta(seconds=seconds))
 def change_status_code():
-    while True:
         model_ids = URLMonitor.objects.all().values_list('id', flat=True)
         for id in model_ids:
             objects = URLMonitor.objects.get(pk=id)
@@ -32,4 +31,5 @@ def change_status_code():
                 last_checked = str(timezone.now())
             )
         return None
+
 
