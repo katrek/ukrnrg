@@ -14,6 +14,6 @@ After Celery has been running, added urls are automatically checked for response
 * After URLs added, type **`celery -A monitoring_project worker -B`** in terminal to run Celery workers to work and update connections to these URLs.
 * Now you can refresh your page and check, when last connections were made, they will automatically updated every time of interval.
 
-**Note: ** 
+**Note:** 
 - If Celery was activated **BEFORE** URL's were added to database, interval time for scanning is set to 10 (default) 
 - If Celery was activated **AFTER** URL's were added to database, interval time for scanning is set to the time that been chosen while adding to database (intervals form field) 
