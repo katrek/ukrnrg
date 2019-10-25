@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="435f802b-c54e-49e5-a9fa-b7468fda824a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/celerybeat-schedule.db" beforeDir="false" afterPath="$PROJECT_DIR$/celerybeat-schedule.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monitoring/tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/get_full_class_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/get_full_class_name.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/monitoring/tasks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="561">
               <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -67,6 +65,15 @@
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/get_full_class_name.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="37" selection-start-column="37" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -137,6 +144,7 @@
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/monitoring/tasks.py" />
+        <option value="$PROJECT_DIR$/modules/get_full_class_name.py" />
       </list>
     </option>
   </component>
@@ -159,6 +167,11 @@
             <path>
               <item name="ukrenergo_new" type="b2602c69:ProjectViewProjectNode" />
               <item name="ukrenergo_new" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ukrenergo_new" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ukrenergo_new" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ukrenergo_new" type="b2602c69:ProjectViewProjectNode" />
@@ -215,18 +228,18 @@
       <updated>1571922082727</updated>
       <workItem from="1571922091623" duration="986000" />
       <workItem from="1571924661678" duration="22190000" />
-      <workItem from="1571957030834" duration="5218000" />
+      <workItem from="1571957030834" duration="5290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28394000" />
+    <option name="totallyTimeSpent" value="28466000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="54" width="1248" height="679" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2578773" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2578773" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,7 +253,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32879046" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Educational.CheckDetails" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3253833" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3253833" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -372,9 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/get_full_class_name.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -485,11 +495,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/monitoring/tasks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="561">
           <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/get_full_class_name.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-start-column="37" selection-end-column="37" />
         </state>
       </provider>
     </entry>
